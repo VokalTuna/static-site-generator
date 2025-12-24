@@ -108,6 +108,8 @@ def olist_to_html_node(block):
         # This solution does not take 10 or more lines in consideration.
         children = text_to_children(text)
         html_items.append(ParentNode("li",children))
+        # The li tag is a ParentNode because the subsequent text
+        # can also be bold, link, or other.
     return ParentNode("ol", html_items)
 
 def ulist_to_html_node(block):
